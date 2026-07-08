@@ -907,15 +907,14 @@ if __name__ == "__main__":
     import atexit
     atexit.register(close_shared_browser)
     
+    # ✅ Railway ke liye PORT fix
+    port = int(os.environ.get("PORT", 5000))
+    
     print("=" * 60)
     print("🚀 RAZORPAY API - FIXED ₹10 INR")
     print("=" * 60)
     print(f"🔒 Amount: ₹{FIXED_AMOUNT_INR} (FIXED)")
-    print("📝 Required: cc, site")
-    print("🔄 Proxy: Optional")
-    print("=" * 60)
-    print("📍 Server: http://localhost:5000")
+    print(f"📍 Running on port: {port}")
     print("=" * 60)
     
-    port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port, debug=False, threaded=True)
